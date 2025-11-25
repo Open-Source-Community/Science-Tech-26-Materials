@@ -1,3 +1,3 @@
-public interface SlackService {
+public interface ISlackService {
     void send(String target, String content);
 }

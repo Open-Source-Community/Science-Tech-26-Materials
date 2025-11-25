@@ -1,3 +1,3 @@
-public interface IUserRepository {
+public interface UserRepository {
     String getLocation(String userId);
 }
