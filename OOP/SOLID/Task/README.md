@@ -4,7 +4,7 @@
 You are given a working but poorly designed notification-processing system.  
 Your task is to **refactor** the code to apply proper **OOP design** and **SOLID principles**, while keeping all external behavior the same.
 
-The starter code mixes validation, GDPR filtering, and delivery logic inside a single procedural method.  
+The starter code mixes validation and delivery logic inside a single procedural method.  
 You must redesign it into a clean, extensible, object-oriented architecture.
 
 ---
@@ -22,8 +22,8 @@ Refactor the `NotificationManager` so that it becomes clean, modular, and fully 
 - Adheres to all SOLID Principles
 
 ## Deliverables
-    - Fully Refactored Code
-    - Short Document explaining the Violations you noticed and how you improved it.(you can substitute this with comprehensive comments in your code.)
+ - `Fully Refactored Code`
+ - `Short Document` explaining the Violations you noticed and how you improved it.(you can substitute this with comprehensive comments in your code.)
 
 ## Helper questions
 These are some questions to ask yourself as you refactor.
@@ -89,3 +89,4 @@ These are some questions to ask yourself as you refactor.
 - If business rules change frequently, is our design resilient?
 - If we need to add cross-cutting concerns (logging, metrics), where would they go?
 - How easy is it to unit test each component in isolation?
+
