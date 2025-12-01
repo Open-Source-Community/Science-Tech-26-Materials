@@ -2,7 +2,7 @@
 
 ## Videos:
 
-- [Queue Video]([https://www.youtube.com/watch?v=X6XmHdPH9R0](https://www.youtube.com/watch?v=9NsdGv9fGXs&list=PL0JXyPMOGVtkkcP0hZEZBZwWG38Uwr3N8&index=5))
+- [Queue Video](https://www.youtube.com/watch?v=9NsdGv9fGXs&list=PL0JXyPMOGVtkkcP0hZEZBZwWG38Uwr3N8&index=5)
 
 ## Tasks:
 - [Queue Sheet](https://docs.google.com/spreadsheets/d/1eTGilEtLONLY_hR6hHLw9AQXh4zZNln2uTkUWk4sxyE/edit?gid=102759707#gid=102759707)
