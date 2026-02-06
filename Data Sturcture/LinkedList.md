@@ -2,7 +2,7 @@
 
 ## Videos:
 
-- [LinkedList Video](https://www.youtube.com/watch?v=CplhcJDWqu4&list=PL0JXyPMOGVtkkcP0hZEZBZwWG38Uwr3N8&index=3)
+- [LinkedList Video](https://youtu.be/OoWiXoBWM4g?si=MaeKh8KiM4Vu1wCW)
 
 ## Tasks:
 - [LinkedList Sheet](https://docs.google.com/spreadsheets/d/1eTGilEtLONLY_hR6hHLw9AQXh4zZNln2uTkUWk4sxyE/edit?usp=drivesdk)
