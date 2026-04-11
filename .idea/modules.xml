@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/OOP/Design Pattern 2/Hands_On/Adapter_Hands_On/Adapter_Hands_On.iml" filepath="$PROJECT_DIR$/OOP/Design Pattern 2/Hands_On/Adapter_Hands_On/Adapter_Hands_On.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/Design Patterns P1/Code/Code.iml" filepath="$PROJECT_DIR$/OOP/Design Patterns P1/Code/Code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/Design Pattern 2/Hands_On/Composite/Composite.iml" filepath="$PROJECT_DIR$/OOP/Design Pattern 2/Hands_On/Composite/Composite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/Design Pattern 2/Hands_On/Decorator/Decorator.iml" filepath="$PROJECT_DIR$/OOP/Design Pattern 2/Hands_On/Decorator/Decorator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/Design Patterns P1/Design Patterns P1.iml" filepath="$PROJECT_DIR$/OOP/Design Patterns P1/Design Patterns P1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/Design Pattern 2/Hands_On/Facade/Facade.iml" filepath="$PROJECT_DIR$/OOP/Design Pattern 2/Hands_On/Facade/Facade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/Design Pattern 3/Hands_On/Hands_On.iml" filepath="$PROJECT_DIR$/OOP/Design Pattern 3/Hands_On/Hands_On.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/OOP.iml" filepath="$PROJECT_DIR$/OOP/OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/SOLID/SOLID.iml" filepath="$PROJECT_DIR$/OOP/SOLID/SOLID.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Science-Tech-26-Materials.iml" filepath="$PROJECT_DIR$/.idea/Science-Tech-26-Materials.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/Design Pattern 3/Hands_On/Strategy Design Pattern/Strategy Design Pattern.iml" filepath="$PROJECT_DIR$/OOP/Design Pattern 3/Hands_On/Strategy Design Pattern/Strategy Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/Design Patterns P1/Task/Task.iml" filepath="$PROJECT_DIR$/OOP/Design Patterns P1/Task/Task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/Design Pattern 3/Hands_On/Template Design Pattern/Template Design Pattern.iml" filepath="$PROJECT_DIR$/OOP/Design Pattern 3/Hands_On/Template Design Pattern/Template Design Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/SOLID/interface_segregation/bad/bad.iml" filepath="$PROJECT_DIR$/OOP/SOLID/interface_segregation/bad/bad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/SOLID/dependency_inversion/bad/bad2.iml" filepath="$PROJECT_DIR$/OOP/SOLID/dependency_inversion/bad/bad2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/SOLID/single_responsibility/bad/bad3.iml" filepath="$PROJECT_DIR$/OOP/SOLID/single_responsibility/bad/bad3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/SOLID/open_closed/bad/bad4.iml" filepath="$PROJECT_DIR$/OOP/SOLID/open_closed/bad/bad4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/SOLID/liskov_substitution/bad/bad5.iml" filepath="$PROJECT_DIR$/OOP/SOLID/liskov_substitution/bad/bad5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/SOLID/open_closed/good/good.iml" filepath="$PROJECT_DIR$/OOP/SOLID/open_closed/good/good.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/SOLID/liskov_substitution/good/good2.iml" filepath="$PROJECT_DIR$/OOP/SOLID/liskov_substitution/good/good2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/SOLID/dependency_inversion/good/good3.iml" filepath="$PROJECT_DIR$/OOP/SOLID/dependency_inversion/good/good3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/SOLID/interface_segregation/good/good4.iml" filepath="$PROJECT_DIR$/OOP/SOLID/interface_segregation/good/good4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/SOLID/single_responsibility/good/good5.iml" filepath="$PROJECT_DIR$/OOP/SOLID/single_responsibility/good/good5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/SOLID/single_responsibility/single_responsibility.iml" filepath="$PROJECT_DIR$/OOP/SOLID/single_responsibility/single_responsibility.iml" />
+    </modules>
+  </component>
+</project>
