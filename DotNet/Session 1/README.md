@@ -19,11 +19,10 @@
 12. [LinkedList\<T\>](#12-linkedlistt)
 13. [HashSet\<T\>](#13-hashsett)
 14. [SortedSet\<T\>](#14-sortedsett)
-15. [Struct vs Class](#15-struct-vs-class)
-16. [Indexers](#16-indexers)
-17. [Object Contracts — Equals, GetHashCode, IComparable](#17-object-contracts--equals-gethashcode-icomparable)
-18. [Custom IEnumerable / IEnumerator Implementation](#18-custom-ienumerable--ienumerator-implementation)
-19. [`yield return` & Deferred Execution](#19-yield-return--deferred-execution)
+15. [Indexers](#16-indexers)
+16. [Object Contracts — Equals, GetHashCode, IComparable](#17-object-contracts--equals-gethashcode-icomparable)
+17. [Custom IEnumerable / IEnumerator Implementation](#18-custom-ienumerable--ienumerator-implementation)
+18. [`yield return` & Deferred Execution](#19-yield-return--deferred-execution)
 
 ---
 
@@ -1144,8 +1143,10 @@ foreach (int temperature in dynamicStream)
 14. Why can you slice a jagged array with ranges (`jagged[1..3]`) but not a rectangular `int[,]`?
 
 ---
-
-
+## got to SAHALAT for bonus questions
+you gain mohsens if you answer those..
+- [sahalat1](https://docs.google.com/document/d/1iH-Cy331MD5C6o1nCnqTW3Tm8CSoMXviLtZN-GSeL34/edit?usp=sharing)
+---
 
 ## Self-Study !!
 ## Exceptions
