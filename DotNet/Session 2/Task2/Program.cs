@@ -6,7 +6,7 @@
         {
             // TODO: Create your complete football application
 
-            Console.WriteLine("🏆 FOOTBALL MANAGEMENT SYSTEM");
+            Console.WriteLine(" FOOTBALL MANAGEMENT SYSTEM");
             Console.WriteLine("================================\n");
             #region TODO1:
             // 1. Create a team
@@ -420,3 +420,4 @@ public class Squad<T>
     #endregion
 }
 
+//feel free to add extra functionalites, each of which will be counted as bonus mohsens!!
