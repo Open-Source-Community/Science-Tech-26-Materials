@@ -1,6 +1,7 @@
 # Advanced C# — Async, Serialization, Attributes, Assemblies & Reflection
 
 **Topics:** Async Programming (`async`/`await`, `Task`) · Serialization · Attributes · Assemblies · Reflection
+Special thanks to Mahmoud Ahmed for presenting and explaining this session
 
 
 
