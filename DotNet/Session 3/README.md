@@ -2,7 +2,7 @@
 
 **Topics:** Async Programming (`async`/`await`, `Task`) · Serialization · Attributes · Assemblies · Reflection
 
-**Special thanks to Mahmoud Ahmed for presenting and explaining this session**
+**Special thanks to Mahmoud Ahmed for presenting and explaining this session and his effort in creating the slides**
 
 
 
