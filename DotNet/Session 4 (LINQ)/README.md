@@ -2,6 +2,9 @@
 
 **Topics:** What LINQ Is and Why · Query Syntax vs Method Syntax · Deferred vs Immediate Execution · Filtering (`Where`) · Projection (`Select`, `SelectMany`) · Ordering · Element Operators · Quantifiers · Partitioning · Multiple-Enumeration & Closure Pitfalls
 
+##resources:
+[Metigator - Linq playlist](https://www.youtube.com/playlist?list=PL4n1Qos4Tb6Sj1Y4xJuJoWCuqleeG2yt6)
+
 ---
 
 ## Table of Contents
