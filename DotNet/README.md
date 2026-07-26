@@ -1,4 +1,4 @@
-# 🚀 .NET & C# Student Study Guide & Reference Companion
+# .NET & C# Student Study Guide & Reference Companion
 
 Welcome to **OSC .NET & C# Study Guide & Helper** repository! This repository is designed to serve as a comprehensive, structured reference for computer science students and developers looking to master modern C# programming, object-oriented software design, asynchronous paradigms, LINQ data processing, and advanced .NET runtime mechanics.
 
