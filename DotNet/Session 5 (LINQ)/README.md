@@ -91,10 +91,10 @@ foreach (var group in groupedByTeamAndPosition)
 }
 ```
 
-Anonymous types (Study Guide, Section 11.9) automatically get value equality, which is exactly what `GroupBy` needs to decide whether two elements belong in the same bucket — two players are grouped together only if their `{ Team, Position }` anonymous objects are equal by value.
+Anonymous types (Session 2, Section 11.9) automatically get value equality, which is exactly what `GroupBy` needs to decide whether two elements belong in the same bucket — two players are grouped together only if their `{ Team, Position }` anonymous objects are equal by value.
 
 **Q: What does `GroupBy` use to decide if two keys are "the same"?**
-By default, `EqualityComparer<TKey>.Default`, which for most types means `.Equals()` (Study Guide, Section 3). This is exactly why anonymous types and records work so cleanly as `GroupBy` keys — they already have correct value-based `Equals`/`GetHashCode` generated for you, so grouping by them "just works" without any extra effort.
+By default, `EqualityComparer<TKey>.Default`, which for most types means `.Equals()` (Session 2, Section 3). This is exactly why anonymous types and records work so cleanly as `GroupBy` keys — they already have correct value-based `Equals`/`GetHashCode` generated for you, so grouping by them "just works" without any extra effort.
 
 ---
 
@@ -124,7 +124,7 @@ foreach (var p in playerWithTeamNames)
 }
 ```
 
-**Query syntax often reads more clearly for joins** (Part 1, Section 2), which is exactly the case Part 1 flagged as the main reason query syntax still shows up in real code:
+**Query syntax often reads more clearly for joins** (session 4, Section 2), which is exactly the case Part 1 flagged as the main reason query syntax still shows up in real code:
 
 ```csharp
 var playerWithTeamNames2 =
@@ -182,7 +182,7 @@ Use `Join` when you want a flat, one-row-per-matched-pair result and don't care 
 
 ## 3. Set Operations — `Distinct`, `Union`, `Intersect`, `Except`
 
-These operators treat sequences like mathematical sets, comparing elements for equality (Study Guide, Section 3) to decide membership.
+These operators treat sequences like mathematical sets, comparing elements for equality (Session 2, Section 3) to decide membership.
 
 ```csharp
 List<string> teamsA = new() { "Al Ahly", "Zamalek", "Pyramids" };
@@ -243,7 +243,7 @@ Because there's no single correct way to handle a length mismatch, and silently 
 
 ## 5. Aggregation — `Count`, `Sum`, `Average`, `Min`, `Max`, `Aggregate`
 
-Aggregation operators reduce a whole sequence down to a single value. All of them force immediate execution (Part 1, Section 3.2) — there's no way to lazily produce "the total."
+Aggregation operators reduce a whole sequence down to a single value. All of them force immediate execution (Session 4, Section 3.2) — there's no way to lazily produce "the total."
 
 ```csharp
 int totalGoals = players.Sum(p => p.Goals);
@@ -289,7 +289,7 @@ double averageGoals = players.Any() ? players.Average(p => p.Goals) : 0;
 ```
 
 **Q: Is there a way to get `Average`/`Max` to return a default instead of throwing?**
-Not directly on the standard operators — the guard-with-`Any()` pattern above (or checking `.Count == 0` first) is the idiomatic way to handle it. This is exactly the same defensive-programming instinct as checking for `null` after `FirstOrDefault` (Part 1, Section 7.2) — LINQ operators that can legitimately have "nothing to return" require an explicit check before you rely on their result.
+Not directly on the standard operators — the guard-with-`Any()` pattern above (or checking `.Count == 0` first) is the idiomatic way to handle it. This is exactly the same defensive-programming instinct as checking for `null` after `FirstOrDefault` (Session 4, Section 7.2) — LINQ operators that can legitimately have "nothing to return" require an explicit check before you rely on their result.
 
 ---
 
@@ -326,7 +326,7 @@ IEnumerable<Player> asEnumerable = list.AsEnumerable();  // "downgrades" the sta
 | Execution | Immediate | Immediate |
 | Use when... | You've already guaranteed uniqueness (e.g., a primary key) | Keys can legitimately repeat, and you want a safe, groupable lookup |
 
-**Why `ToDictionary` throwing on duplicates is a *feature*, not an inconvenience:** if you're building a dictionary keyed by something you believe is unique (like `JerseyNumber` within a single team), and it turns out two players share that key, that's a real bug in your data or your assumptions, exactly the same reasoning as choosing `Single` over `First` in Part 1, Section 7.1. `ToDictionary` surfaces that bug immediately and loudly, instead of silently overwriting one entry with another.
+**Why `ToDictionary` throwing on duplicates is a *feature*, not an inconvenience:** if you're building a dictionary keyed by something you believe is unique (like `JerseyNumber` within a single team), and it turns out two players share that key, that's a real bug in your data or your assumptions, exactly the same reasoning as choosing `Single` over `First` in Session 4, Section 7.1. `ToDictionary` surfaces that bug immediately and loudly, instead of silently overwriting one entry with another.
 
 **Q: Why does `AsEnumerable()` exist if it doesn't seem to do anything?**
 It changes the *static* (compile-time) type of the expression to `IEnumerable<T>`, without touching the actual data. This is a genuinely useful trick with `IQueryable<T>` (Section 7): calling `.AsEnumerable()` on a database query forces everything *after* that call to run as plain in-memory LINQ instead of being translated to SQL, useful when you need a LINQ operator or a custom method that the database provider can't translate.
@@ -345,7 +345,7 @@ IEnumerable<Player> onlyPlayers = mixedBag.OfType<Player>();   // safe: Team obj
 IEnumerable<Player> allAsPlayers = mixedBag.Cast<Player>();     // throws the moment it hits a Team object
 ```
 
-**Why both exist instead of just one "safe" option:** `OfType<T>` is what you want when a sequence genuinely contains a mix of types and you only want one kind. `Cast<T>` is for a different situation: the sequence is *already* only one type at runtime, but the compiler only knows about it as a weaker type, such as the non-generic `IEnumerable` returned by some older APIs. `Cast<T>` lets you tell the compiler "trust me, these are all `Player`," and it validates that promise at runtime, throwing immediately if you were wrong, exactly the same "fail loudly on a broken assumption" instinct as `Single` (Part 1, Section 7.1) and `ToDictionary` (Section 6.2) above.
+**Why both exist instead of just one "safe" option:** `OfType<T>` is what you want when a sequence genuinely contains a mix of types and you only want one kind. `Cast<T>` is for a different situation: the sequence is *already* only one type at runtime, but the compiler only knows about it as a weaker type, such as the non-generic `IEnumerable` returned by some older APIs. `Cast<T>` lets you tell the compiler "trust me, these are all `Player`," and it validates that promise at runtime, throwing immediately if you were wrong, exactly the same "fail loudly on a broken assumption" instinct as `Single` (Session 4, Section 7.1) and `ToDictionary` (Section 6.2) above.
 
 ### 6.4 Generating Sequences — `Range`, `Repeat`, `Empty`
 
@@ -391,7 +391,7 @@ This is the concept that separates "I can query a `List<T>`" from "I understand 
 
 ### 7.1 `IEnumerable<T>` — LINQ to Objects
 
-Everything in Part 1 and Sections 1–6 of Part 2, when used against a `List<T>`, `T[]`, or any other in-memory collection, is **LINQ to Objects**: your lambdas are compiled to ordinary C# delegates, and the operators run as actual C# code, in your process, over data already sitting in memory.
+Everything in Session 4 and Sections 1–6 of Part 2, when used against a `List<T>`, `T[]`, or any other in-memory collection, is **LINQ to Objects**: your lambdas are compiled to ordinary C# delegates, and the operators run as actual C# code, in your process, over data already sitting in memory.
 
 ### 7.2 `IQueryable<T>` — LINQ to Entities (and Other Remote Providers)
 
@@ -470,7 +470,7 @@ public async Task<double> GetAverageGoalsAsync(CancellationToken cancellationTok
     => await _dbContext.Players.AverageAsync(p => p.Goals, cancellationToken);
 ```
 
-**Why this matters as much as any single LINQ operator in this guide:** almost every real-world .NET backend method that touches a database is, in practice, an `async Task<T>` method (Async guide, Sections 1.3–1.4) built by chaining ordinary, deferred LINQ operators (Sections 1–7 of this guide) and finishing with one of these `...Async` terminal calls. Knowing `Where`/`Select`/`GroupBy` and knowing `async`/`await` are each half of the picture; a junior developer needs to be comfortable combining them, because that combination is what nearly every controller action and repository method in a real project actually looks like.
+**Why this matters as much as any single LINQ operator in this guide:** almost every real-world .NET backend method that touches a database is, in practice, an `async Task<T>` method (Session 3, Sections 1.3–1.4) built by chaining ordinary, deferred LINQ operators (Sections 1–7 of this guide) and finishing with one of these `...Async` terminal calls. Knowing `Where`/`Select`/`GroupBy` and knowing `async`/`await` are each half of the picture; a junior developer needs to be comfortable combining them, because that combination is what nearly every controller action and repository method in a real project actually looks like.
 
 ### 8.2 Why There's an `Async` Suffix at All — Same Predicate, Two Execution Paths
 
@@ -509,13 +509,13 @@ public async Task<List<TeamReport>> GetTopTeamReportsAsync(int minTotalGoals, Ca
 }
 ```
 
-This is the exact same query built in Section 11's worked example, changed only at the very last call. Everything about deferred execution, `GroupBy`, aggregation-inside-a-projection, and single-SQL-statement translation from Section 7 still applies unchanged; the only difference is that the thread is released back to the pool while the database does its work, instead of sitting blocked, which is precisely the scalability benefit the Async guide's Section 1.1 opened with.
+This is the exact same query built in Section 11's worked example, changed only at the very last call. Everything about deferred execution, `GroupBy`, aggregation-inside-a-projection, and single-SQL-statement translation from Section 7 still applies unchanged; the only difference is that the thread is released back to the pool while the database does its work, instead of sitting blocked, which is precisely the scalability benefit the Session 3 Section 1.1 opened with.
 
 ---
 
 ## 9. Writing Your Own LINQ Operators
 
-There's no special compiler magic behind `Where`, `Select`, or any other LINQ method — they're ordinary extension methods (Study Guide, Section 9) on `IEnumerable<T>`, most built using `yield return` (Study Guide, Section 10). You can write your own the exact same way.
+There's no special compiler magic behind `Where`, `Select`, or any other LINQ method — they're ordinary extension methods (Session 3, Section 9) on `IEnumerable<T>`, most built using `yield return` (Session 2, Section 10). You can write your own the exact same way.
 
 ```csharp
 public static class MyLinqExtensions
@@ -538,7 +538,7 @@ public static class MyLinqExtensions
 var everyThirdPlayer = players.EveryNth(3).Where(p => !p.IsInjured);
 ```
 
-**Why write your own instead of composing built-in operators?** Sometimes a genuinely reusable, named operation isn't expressible cleanly as a chain of existing operators, or you want the *name itself* to document intent clearly across your codebase (`players.ActiveOnly()` instead of `players.Where(p => !p.IsInjured && p.ContractStatus == Status.Active)` scattered everywhere it's needed). This is exactly the same motivation behind writing any extension method (Study Guide, Section 9.1) — you don't own `IEnumerable<T>`, but you can still extend it meaningfully.
+**Why write your own instead of composing built-in operators?** Sometimes a genuinely reusable, named operation isn't expressible cleanly as a chain of existing operators, or you want the *name itself* to document intent clearly across your codebase (`players.ActiveOnly()` instead of `players.Where(p => !p.IsInjured && p.ContractStatus == Status.Active)` scattered everywhere it's needed). This is exactly the same motivation behind writing any extension method (Session 2, Section 9.1) — you don't own `IEnumerable<T>`, but you can still extend it meaningfully.
 
 **A second custom operator, showing an eager (non-deferred) version for contrast:**
 
@@ -563,7 +563,7 @@ public static class MyLinqExtensions
 ```
 
 **Q: If I write my own operator using `yield return`, does it automatically get deferred execution the way `Where` does?**
-Yes — any method using `yield return` is automatically lazy, for exactly the reasons covered in Study Guide Section 10.5 and Part 1 Section 3.1: the compiler builds a state machine, and none of the body actually runs until the caller starts pulling values out via `MoveNext()`. This means your own custom operators automatically participate correctly in query chains and inherit the same multiple-enumeration considerations from Part 1, Section 10.1 — worth keeping in mind if your custom operator wraps something expensive.
+Yes — any method using `yield return` is automatically lazy, for exactly the reasons covered in Session 2 Section 10.5 and Session 4 Section 3.1: the compiler builds a state machine, and none of the body actually runs until the caller starts pulling values out via `MoveNext()`. This means your own custom operators automatically participate correctly in query chains and inherit the same multiple-enumeration considerations from Session 4, Section 10.1 — worth keeping in mind if your custom operator wraps something expensive.
 
 ---
 
@@ -614,7 +614,7 @@ var names2 = await dbContext.Players
     .ToListAsync(cancellationToken);
 ```
 
-This connects directly back to Part 1, Section 5.1: projecting to exactly the shape you need isn't just about clean DTOs. Against `IQueryable<T>`, an early `.Select(...)` becomes part of the SQL `SELECT` clause itself, genuinely reducing what the database has to read and send.
+This connects directly back to Session 4, Section 5.1: projecting to exactly the shape you need isn't just about clean DTOs. Against `IQueryable<T>`, an early `.Select(...)` becomes part of the SQL `SELECT` clause itself, genuinely reducing what the database has to read and send.
 
 ### 10.3 Materialize Once, Reuse the Result
 
@@ -664,7 +664,7 @@ var expensiveResults = largeCollection
     .ToList();
 ```
 
-**Why this isn't the default:** parallelizing has overhead (splitting work across threads, then merging results back together) and only pays off for genuinely CPU-heavy work over a large enough collection. For I/O-bound work (Async guide, Section 1.2) or small collections, `AsParallel()` typically makes things *slower*, not faster, so it's an intentional opt-in rather than LINQ's default behavior. `AsParallel()` is unrelated to `IQueryable<T>`'s database translation from Section 7 — it's purely a LINQ to Objects tool, for in-memory data only.
+**Why this isn't the default:** parallelizing has overhead (splitting work across threads, then merging results back together) and only pays off for genuinely CPU-heavy work over a large enough collection. For I/O-bound work (Session 3, Section 1.2) or small collections, `AsParallel()` typically makes things *slower*, not faster, so it's an intentional opt-in rather than LINQ's default behavior. `AsParallel()` is unrelated to `IQueryable<T>`'s database translation from Section 7 — it's purely a LINQ to Objects tool, for in-memory data only.
 
 ---
 
@@ -749,3 +749,5 @@ public class TeamReport
 | PLINQ / `AsParallel` | Parallelized LINQ to Objects, for CPU-bound work over large in-memory collections |
 
 ---
+
+
