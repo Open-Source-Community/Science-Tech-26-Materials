@@ -1,5 +1,5 @@
 # C# Fundamental Concepts — Study Guide 
-
+A special thanks to **Moaz Ibrahim** for his efforts in helping prepare and explain this session.
 
 ---
 
