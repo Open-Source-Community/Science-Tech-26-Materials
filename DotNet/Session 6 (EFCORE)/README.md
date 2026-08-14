@@ -1,8 +1,7 @@
 # EF Core Part 1 — Fundamentals: Mapping, DbContext & CRUD
 
-**Topics:** Why an ORM · Project Setup · Entities & `DbContext` · Dependency Injection · Migrations · Basic CRUD · The Change Tracker.
+**Topics:** Why an ORM · Project Setup · Entities & `DbContext` · Dependency Injection · Migrations · Basic CRUD · The Change Tracker
 A special thanks to **Poula Saber** for explaining this session.
-
 ---
 
 ## Table of Contents
@@ -141,7 +140,7 @@ public class LeagueDbContext : DbContext
 `DbContext` represents a **session** with the database — a unit of work (a concept this guide returns to explicitly in Part 3) that tracks the objects you've loaded or changed and turns them into SQL when you ask it to save. `DbSet<Player>` is the queryable, addressable handle to the `Players` table — this is exactly the `IQueryable<T>` from Session 5, Section 7: writing `dbContext.Players.Where(p => p.Goals > 20)` builds an expression tree, not a loop, and nothing executes until it's enumerated or awaited.
 
 >**Q: Why is `Players` a property returning `Set<Player>()` instead of a plain auto-property?**
-Both work — `public DbSet<Player> Players { get; set; }` is the more common, older style, and EF Core still supports it. The `Set<Player>()` version is a newer, equally valid convention that avoids a public setter nobody should actually call; either is acceptable, and a real codebase should just pick one and stay consistent, the same "pick a convention and don't relitigate it" instinct as choosing method syntax over query syntax in LINQ Part 1, Section 2.3.
+Both work — `public DbSet<Player> Players { get; set; }` is the more common, older style, and EF Core still supports it. The `Set<Player>()` version is a newer, equally valid convention that avoids a public setter nobody should actually call; either is acceptable, and a real codebase should just pick one and stay consistent, the same "pick a convention and don't relitigate it" instinct as choosing method syntax over query syntax in Session 4, Section 2.3.
 
 ### 3.4 Configuring the Connection — `OnConfiguring` vs Dependency Injection
 
@@ -385,3 +384,4 @@ EF Core is precise about this: setting a property to the exact value it already 
 | `Find` / `FindAsync` | Primary-key lookup that checks the change tracker before querying the database |
 
 ---
+
