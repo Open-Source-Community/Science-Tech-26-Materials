@@ -49,7 +49,7 @@ Difficulty is marked per item: **[Easy]**, **[Medium]**, **[Hard]**. Do them rou
 
 ---
 
-## Modeling Real Relationships
+## Modeling Relationships
 
 - **[Medium] Organize the Configuration**
   Once your model has more than two or three entities, one giant configuration method gets hard to navigate. Split it up the way real projects do.
@@ -68,7 +68,7 @@ Difficulty is marked per item: **[Easy]**, **[Medium]**, **[Hard]**. Do them rou
 
 ---
 
-## Querying Like It Matters
+## Querying
 
 - **[Medium] Build a Leaderboard**
   Implement a "top scorers" screen that supports paging — page 1, page 2, and so on — with a stable, predictable order every time it's called. Get this subtly wrong and it'll work fine in testing and misbehave unpredictably later.
