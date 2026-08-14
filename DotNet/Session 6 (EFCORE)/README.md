@@ -1,7 +1,7 @@
 # EF Core Part 1 — Fundamentals: Mapping, DbContext & CRUD
 
 **Topics:** Why an ORM · Project Setup · Entities & `DbContext` · Dependency Injection · Migrations · Basic CRUD · The Change Tracker
-A special thanks to **Poula Saber** for explaining this session.
+#### A special thanks to **Poula Saber** for explaining this session.
 ---
 
 ## Table of Contents
